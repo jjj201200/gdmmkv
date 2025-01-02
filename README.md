@@ -13,7 +13,7 @@ This is an MMKV-based storage plugin designed for the Godot game engine, impleme
 1. Clone this repository to your Godot project.
 2. Compile the C++ code into a DLL (specific instructions can be found in the build directory).
 3. Import the DLL into your Godot project using GDExtension.
-4. Add `demo/bin` to your project settings.
+4. Add files in `demo/bin` to your project's `bin` dictionary.
 
 ## Usage
 
@@ -28,8 +28,8 @@ This is an MMKV-based storage plugin designed for the Godot game engine, impleme
    mmkv.set_int("int", 10.1) # only save '10'
    mmkv.set_int("float", 10.1)
    mmkv.set_vector2("vector2", Vector2(1.1, 2.2))
-	mmkv.set_vector2i("vector2i", Vector2(1.1, 2.2)) # only save Vector2(1, 2)
-	mmkv.remove_value("vector2");
+   mmkv.set_vector2i("vector2i", Vector2(1.1, 2.2)) # only save Vector2(1, 2)
+   mmkv.remove_value("vector2");
    var result = mmkv.get_bool("bool") # get_int / get_float / get_vector2 / get_vector2i
    print(result)
    ```
