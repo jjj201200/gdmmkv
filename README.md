@@ -36,8 +36,7 @@ This is an MMKV-based storage plugin designed for the Godot game engine, impleme
 
 ## Compilation Instructions
 
-1. Create a folder named `godot-cpp`.
-2. Use Git to clone the specific branch of the [godot-cpp repository](https://github.com/godotengine/godot-cpp) corresponding to your target Godot version (e.g., 4.3) into the `godot-cpp` folder:
+1. Use Git to clone the specific branch of the [godot-cpp repository](https://github.com/godotengine/godot-cpp) corresponding to your target Godot version (e.g., 4.3) into the `godot-cpp` folder:
    ```bash
    $ git clone -b 4.3 https://github.com/godotengine/godot-cpp.git godot-cpp
    ```
