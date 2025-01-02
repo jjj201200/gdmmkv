@@ -1,4 +1,4 @@
-# MMKV Storage Plugin for Godot
+# Win64 MMKV Storage Plugin for Godot
 
 This is an MMKV-based storage plugin designed for the Godot game engine, implemented in C++ and compiled as a DLL. It is integrated into Godot using the GDExtension system and provides basic interfaces for real-time data storage.
 
