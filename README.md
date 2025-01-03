@@ -36,6 +36,8 @@ This is an MMKV-based storage plugin designed for the Godot game engine, impleme
 
 ## Compilation Instructions
 
+Reference [GDExtension C++ example](https://docs.godotengine.org/en/latest/tutorials/scripting/gdextension/gdextension_cpp_example.html)
+
 1. Use Git to clone the specific branch of the [godot-cpp repository](https://github.com/godotengine/godot-cpp) corresponding to your target Godot version (e.g., 4.3) into the `godot-cpp` folder:
    ```bash
    $ git clone -b 4.3 https://github.com/godotengine/godot-cpp.git godot-cpp
@@ -50,6 +52,10 @@ This is an MMKV-based storage plugin designed for the Godot game engine, impleme
 
 - Tencent's MMKV
 - Godot 4.x with GDExtension support
+
+## Update Documents
+
+   Reference [GDExtension documentation system](https://docs.godotengine.org/en/latest/tutorials/scripting/gdextension/gdextension_docs_system.html)
 
 ## License
 
