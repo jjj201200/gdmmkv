@@ -47,7 +47,7 @@ namespace godot {
             bool set_vector2i(String key, Vector2i value);
             Vector2i get_vector2i(String key);
 
-            bool remove_value(String key);
+            bool remove_key(String key);
             bool has_key(String key);
     };
 }

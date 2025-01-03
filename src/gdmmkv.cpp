@@ -28,8 +28,12 @@ bool isFileExist(const MMKVPath_t &nsFilePath) {
 void GDMMKV::_bind_methods() {
     // ClassDB::bind_method(D_METHOD("GDMMKV", "file_path", "id"), &GDMMKV::init, DEFVAL("default"));
     ClassDB::bind_method(D_METHOD("init", "file_path", "id"), &GDMMKV::init, DEFVAL("default"));
-    ClassDB::bind_method(D_METHOD("has_store", "id"), &GDMMKV::has_store);
+    
     ClassDB::bind_method(D_METHOD("create_store", "id"), &GDMMKV::create_store);
+    ClassDB::bind_method(D_METHOD("has_store", "id"), &GDMMKV::has_store);
+
+    ClassDB::bind_method(D_METHOD("remove_key", "key"), &GDMMKV::remove_key);
+    ClassDB::bind_method(D_METHOD("has_key", "key"), &GDMMKV::has_key);
 
     ClassDB::bind_method(D_METHOD("set_bool", "key", "value"), &GDMMKV::set_bool);
     ClassDB::bind_method(D_METHOD("get_bool", "key", "default_value"), &GDMMKV::get_bool, DEFVAL(false));
@@ -46,9 +50,7 @@ void GDMMKV::_bind_methods() {
     ClassDB::bind_method(D_METHOD("set_vector2i", "key", "value"), &GDMMKV::set_vector2i);
     ClassDB::bind_method(D_METHOD("get_vector2i", "key"), &GDMMKV::get_vector2i);
 
-    ClassDB::bind_method(D_METHOD("remove_value", "key"), &GDMMKV::remove_value);
-
-    ClassDB::bind_method(D_METHOD("has_key", "key"), &GDMMKV::has_key);
+    
 }
 
 // bool GDMMKV::init_ref() {
@@ -201,7 +203,7 @@ Vector2i GDMMKV::get_vector2i(String key) {
 }
 
 
-bool GDMMKV::remove_value(String key) {
+bool GDMMKV::remove_key(String key) {
     return this->store->removeValueForKey(std::string(key.utf8()));
 }
 

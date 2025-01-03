@@ -3,3 +3,4 @@ demo/bin/
 MMKV/
 *.obj
 *.tmp
+.sconsign.dblite
