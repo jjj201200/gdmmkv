@@ -4,3 +4,4 @@ MMKV/
 *.obj
 *.tmp
 .sconsign.dblite
+src/gen/

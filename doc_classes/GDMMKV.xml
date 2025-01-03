@@ -4,24 +4,23 @@
 	</brief_description>
 	<description>
 		This is an MMKV-based storage plugin designed for the Godot game engine, implemented in C++ and compiled as a DLL. 
-	It is integrated into Godot using the GDExtension system and provides basic interfaces for real-time data storage. 
-	The plugin leverages Tencent's MMKV library to deliver high-performance and efficient key-value storage for game developers. 
+		It is integrated into Godot using the GDExtension system and provides basic interfaces for real-time data storage. 
+		The plugin leverages Tencent's MMKV library to deliver high-performance and efficient key-value storage for game developers. 
 
-	Key features include:
-	- Support for storing and retrieving various data types such as booleans, integers, floats, and vectors.
-	- Ability to manage multiple independent storage instances using unique identifiers.
-	- Seamless integration with the Godot engine, enabling easy setup and usage in game projects.
-	- High-speed and low-latency operations optimized for both desktop and mobile platforms.
+		Key features include:
+		- Support for storing and retrieving various data types such as booleans, integers, floats, and vectors.
+		- Ability to manage multiple independent storage instances using unique identifiers.
+		- Seamless integration with the Godot engine, enabling easy setup and usage in game projects.
+		- High-speed and low-latency operations optimized for both desktop and mobile platforms.
 	</description>
 	<tutorials>
 	</tutorials>
 	<methods>
-		<method name="init">
+		<method name="close_store">
 			<return type="void" />
-			<param index="0" name="file_path" type="String" />
-			<param index="1" name="id" type="String" default="&quot;default&quot;" />
+			<param index="0" name="id" type="String" />
 			<description>
-				Initializes the storage system with a file path and an optional unique identifier for the storage instance.
+				Close a existed storage instance with the specified unique identifier.
 			</description>
 		</method>
 		<method name="create_store">
@@ -29,27 +28,6 @@
 			<param index="0" name="id" type="String" />
 			<description>
 				Creates a new storage instance with the specified unique identifier.
-			</description>
-		</method>
-		<method name="has_key">
-			<return type="bool" />
-			<param index="0" name="key" type="String" />
-			<description>
-				Checks if a key exists in the current storage.
-			</description>
-		</method>
-		<method name="remove_key">
-			<return type="bool" />
-			<param index="0" name="key" type="String" />
-			<description>
-				Remove the key and value in the current storage.
-			</description>
-		</method>
-		<method name="has_store">
-			<return type="bool" />
-			<param index="0" name="id" type="String" />
-			<description>
-				Checks if a storage instance with the specified identifier exists.
 			</description>
 		</method>
 		<method name="get_bool">
@@ -88,6 +66,35 @@
 			<param index="0" name="key" type="String" />
 			<description>
 				Retrieves a Vector2i value from the storage with the given key.
+			</description>
+		</method>
+		<method name="has_key">
+			<return type="bool" />
+			<param index="0" name="key" type="String" />
+			<description>
+				Checks if a key exists in the current storage.
+			</description>
+		</method>
+		<method name="has_store">
+			<return type="bool" />
+			<param index="0" name="id" type="String" />
+			<description>
+				Checks if a storage instance with the specified identifier exists.
+			</description>
+		</method>
+		<method name="init">
+			<return type="void" />
+			<param index="0" name="file_path" type="String" />
+			<param index="1" name="id" type="String" default="&quot;default&quot;" />
+			<description>
+				Initializes the storage system with a file path and an optional unique identifier for the storage instance.
+			</description>
+		</method>
+		<method name="remove_key">
+			<return type="bool" />
+			<param index="0" name="key" type="String" />
+			<description>
+				Remove the key and value in the current storage.
 			</description>
 		</method>
 		<method name="set_bool">

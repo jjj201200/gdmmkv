@@ -30,6 +30,7 @@ namespace godot {
             void init(String root_path, String id);
             bool has_store(String id);
             void create_store(String id);
+            void close_store(String id);
             bool set_current_store(String id);
 
             bool set_bool(String key, bool value);

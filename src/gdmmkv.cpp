@@ -31,6 +31,7 @@ void GDMMKV::_bind_methods() {
     
     ClassDB::bind_method(D_METHOD("create_store", "id"), &GDMMKV::create_store);
     ClassDB::bind_method(D_METHOD("has_store", "id"), &GDMMKV::has_store);
+    ClassDB::bind_method(D_METHOD("close_store", "id"), &GDMMKV::close_store);
 
     ClassDB::bind_method(D_METHOD("remove_key", "key"), &GDMMKV::remove_key);
     ClassDB::bind_method(D_METHOD("has_key", "key"), &GDMMKV::has_key);
@@ -124,6 +125,10 @@ void GDMMKV::create_store(String id) {
     this->store = MMKV::mmkvWithID(std::string(id.utf8()));
 }
 
+void GDMMKV::close_store(String id) {
+    this->store->close();
+}
+
 // bool GDMMKV::set_current_store(String id) {
 //     if (stores.count(std::string(id.utf8())) == 1) {
 //         this->store = stores[std::string(id.utf8())];
@@ -152,7 +157,7 @@ bool GDMMKV::set_int(String key, int64_t value) {
 
 int64_t GDMMKV::get_int(String key, int64_t default_value = 0) {
     const std::string utf8_key = std::string(key.utf8());
-    UtilityFunctions::prints(this->store->containsKey(utf8_key));
+    // UtilityFunctions::prints(this->store->containsKey(utf8_key));
     if (this->store->containsKey(utf8_key)) {
         return this->store->getInt64(utf8_key, default_value);
     }
